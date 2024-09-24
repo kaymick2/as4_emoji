@@ -1,43 +1,48 @@
-import React from 'react';
-import './App.css';
+  import React, { useState } from 'react';
+  import './App.css';
 
-const displayEmojiName = event => alert(event.target.id);
-const emojis = [
-  {
-    emoji: '😀',
-    name: "test grinning face"
-  },
-  {
-    emoji: '🎉',
-    name: "party popper"
-  },
-  {
-    emoji: '💃',
-    name: "woman dancing"
+
+  const emojis = [
+    {
+      emoji: '😀',
+      name: "test grinning face"
+    },
+    {
+      emoji: '🎉',
+      name: "party popper"
+    },
+    {
+      emoji: '💃',
+      name: "woman dancing"
+    }
+  ];
+
+  function App() {
+    const greeting = "greeting";
+    const [emojiName, setEmojiName]= useState("");
+    const handleEmojiSelect = (emojinamae) => {
+      setEmojiName(emojinamae);
+    };
+    return(
+      <div className="container">
+        <h1 id={greeting}>brazy</h1>
+        <p>{"javascript is not demure"}</p>
+        <ul>
+          {
+            emojis.map(emoji => (
+              <li key={emoji.name}>
+                <button
+                  onClick= {()=>handleEmojiSelect(emoji.name)}
+                >
+                  <span role="img" aria-label={emoji.name} id={emoji.name}>{emoji.emoji}</span>
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+        <h1>{emojiName}</h1>
+      </div>
+    )
   }
-];
 
-function App() {
-  const greeting = "greeting";
-  return(
-    <div className="container">
-      <h1 id={greeting}>Hello, World</h1>
-      <p>I am writing JSX</p>
-      <ul>
-        {
-          emojis.map(emoji => (
-            <li key={emoji.name}>
-              <button
-                onClick={displayEmojiName}
-              >
-                <span role="img" aria-label={emoji.name} id={emoji.name}>{emoji.emoji}</span>
-              </button>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  )
-}
-
-export default App;
+  export default App;
