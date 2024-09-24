@@ -30,24 +30,26 @@ const EmojiButton = memo(({ emoji, handleEmojiSelect, btnclassname }) => (
   </li>
 ));
 
+let btnclassname = 'button';
+let stat='';
+let bgclassname = 'bg';
 function App() {
   const greeting = "HALLO :D";
   const [isclick, setisclick] = useState(false);
   const [emojiName, setEmojiName] = useState("");
 
-  let btnclassname = 'button';
-  let bgclassname = 'bg';
-
   if (isclick) {
     btnclassname += ' button--active';
+    stat="button active";
   } else {
     bgclassname += ' bg--active';
+    stat=("background active");
   }
 
   const handleEmojiSelect = (emojiname) => {
     setEmojiName(emojiname);
     setisclick(true);
-  };
+    };
 
   return (
     <div className={bgclassname} onClick={() => setisclick(false)}>
@@ -66,6 +68,15 @@ function App() {
           ))}
         </ul>
       <h1>{emojiName}</h1>
+      <h1>{stat}</h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+
     </div>
           </div>
   );
