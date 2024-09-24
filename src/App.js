@@ -39,10 +39,8 @@ function App() {
   const [emojiName, setEmojiName] = useState("");
 
   if (isclick) {
-    btnclassname += ' button--active';
     stat="button active";
   } else {
-    bgclassname += ' bg--active';
     stat=("background active");
   }
 
@@ -52,7 +50,7 @@ function App() {
     };
 
   return (
-    <div className={bgclassname} onClick={() => setisclick(false)}>
+    <div className={`bg ${isclick ? 'bg--active' : ''}`} onClick={() => setisclick(false)}>
 
     <div className='container'>
       <h1 id={greeting}>brazy</h1>
@@ -63,7 +61,7 @@ function App() {
               key={emoji.name}
               emoji={emoji}
               handleEmojiSelect={handleEmojiSelect}
-              btnclassname={btnclassname}
+              btnclassname={`button ${isclick ? 'button--active' : ''}`}
             />
           ))}
         </ul>
