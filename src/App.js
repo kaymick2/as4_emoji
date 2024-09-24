@@ -40,7 +40,7 @@ function App() {
   if (isclick) {
     btnclassname += ' button--active';
   } else {
-    bgclassname += ' bg-active';
+    bgclassname += ' bg--active';
   }
 
   const handleEmojiSelect = (emojiname) => {
@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className={bgclassname} onClick={() => setisclick(false)}>
+
     <div className='container'>
       <h1 id={greeting}>brazy</h1>
       <p>{"javascript is not demure"}</p>
@@ -65,8 +66,7 @@ function App() {
         </ul>
       <h1>{emojiName}</h1>
     </div>
-    </div>
-
+          </div>
   );
 }
 
