@@ -37,6 +37,7 @@ function App() {
 
   let btnclassname = 'button';
   let bgclassname = 'bg';
+
   if (isclick) {
     btnclassname += ' button--active';
   } else {

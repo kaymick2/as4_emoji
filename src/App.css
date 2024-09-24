@@ -18,6 +18,9 @@ button {
 .button--active{
     background:chartreuse;
 }
+.button:hover{
+    background: blue;
+}
 .bg--active{
     background:turquoise;
 }
