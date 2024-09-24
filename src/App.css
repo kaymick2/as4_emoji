@@ -3,13 +3,22 @@
     flex-direction: column;
     align-items: center;
 }
-
-button {
+.bg{
+    background:blue;
+}
+.button {
     font-size: 2em;
     border: 0;
+    border-radius: 6px;
     padding: 0;
-    background: none;
+    background: black;
     cursor: pointer;
+}
+.button--active{
+    background:chartreuse;
+}
+.bg--active{
+    background:pink;
 }
 
 ul {
